@@ -14,16 +14,16 @@ app.use(cors())
 const email = 'bernardmayowaa@gmail.com'; 
 
 // GitHub URL of my project's codebase
-const githubRepoURL = 'https://github.com/maxi-musz/latest-basic.git';
+const github_url = 'https://github.com/maxi-musz/latest-basic.git';
 
 // API endpoint
 app.get('/api/v1', (req, res) => {
-  const currentDateTime = DateTime.now().toISO(); // Get current datetime in ISO 8601 format
+  const current_datetime = DateTime.now().toISO(); // Get current datetime in ISO 8601 format
 
   const response = {
     email,
-    currentDateTime,
-    githubRepoURL,
+    current_datetime,
+    github_url,
   };
 
   res.json(response);
