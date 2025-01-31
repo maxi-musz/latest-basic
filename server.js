@@ -1,9 +1,12 @@
 import express from 'express';
 import { DateTime } from 'luxon'; 
 import cors from "cors";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const PORT = 1000;
+const PORT = process.env.PORT || 1000;
 
 app.use(cors())
 
@@ -24,6 +27,10 @@ app.get('/api/v1', (req, res) => {
   };
 
   res.json(response);
+});
+
+app.get('/ping', (req, res) => {
+  res.status(200).send('Pong!');
 });
 
 // Start the server
