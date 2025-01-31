@@ -33,6 +33,14 @@ app.get('/ping', (req, res) => {
   res.status(200).send('Pong!');
 });
 
+app.get("*", (req, res) => {
+  console.error("Endpoint not found")
+  res.status(404).json({
+    success: false, 
+    message: "Not found, correct endpoint is https://latest-basic.onrender.com/api/v1"
+  })
+})
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
